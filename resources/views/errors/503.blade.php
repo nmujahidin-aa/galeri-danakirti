@@ -83,25 +83,25 @@
 
         class Bubble {
             constructor() {
-                this.x = Math.random() * canvas.width; // Posisi horizontal acak
-                this.y = canvas.height + Math.random() * 200; // Muncul dari bawah layar
-                this.radius = Math.random() * 30 + 20; // Ukuran besar (20 hingga 50 piksel)
-                this.speed = Math.random() * 1.5 + 0.5; // Kecepatan lambat (0.5 hingga 2)
-                this.opacity = Math.random() * 0.7 + 0.3; // Opasitas antara 0.3 hingga 1
+                this.x = Math.random() * canvas.width;
+                this.y = canvas.height + Math.random() * 100;
+                this.radius = Math.random() * 10 + 5;
+                this.speed = Math.random() * 2 + 1;
+                this.opacity = Math.random() * 0.5 + 0.5;
             }
 
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`; // Warna putih transparan
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
                 ctx.fill();
                 ctx.closePath();
             }
 
             update() {
-                this.y -= this.speed; // Bergerak ke atas
-                if (this.y + this.radius < 0) { // Jika keluar dari layar atas
-                    this.y = canvas.height + Math.random() * 200; // Kembali dari bawah
+                this.y -= this.speed;
+                if (this.y + this.radius < 0) {
+                    this.y = canvas.height + Math.random() * 100;
                     this.x = Math.random() * canvas.width;
                 }
             }
