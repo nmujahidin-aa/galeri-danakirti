@@ -9,8 +9,15 @@
         </a>
         <nav class="header_nav">
             <ul class="header_nav-list">
-                <li class="header_nav-list_item">
-                    <a class="nav-link d-inline-flex align-items-center" href="#">
+                <li class="header_nav-list_item dropdown">
+                    <a
+                        class="nav-link dropdown-toggle d-inline-flex align-items-center"
+                        href="#"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#shopMenu"
+                        aria-expanded="false"
+                        aria-controls="shopMenu"
+                    >
                         Beranda
                     </a>
                 </li>
@@ -97,13 +104,8 @@
                 </li>
             </ul>
         </nav>
-        <span class="header_trigger d-inline-flex d-xl-none flex-column justify-content-between">
-            <span class="line line--short"></span>
-            <span class="line line"></span>
-            <span class="line line--short"></span>
-            <span class="line line"></span>
-        </span>
-        <div class="header_user d-flex justify-content-end align-items-center">
+
+        {{-- <div class="header_user d-flex justify-content-end align-items-center">
             <form class="header_user-search" action="#" method="get" data-type="searchForm">
                 <input class="header_user-search_field field required" type="text" placeholder="Search..." />
                 <button
@@ -125,6 +127,13 @@
             >
                 <i class="icon-basket"></i>
             </a>
-        </div>
+        </div> --}}
+
+        <span class="header_trigger d-inline-flex d-xl-none flex-column justify-content-between">
+            <span class="line line--short"></span>
+            <span class="line line"></span>
+            <span class="line line--short"></span>
+            <span class="line line"></span>
+        </span>
     </div>
 </header>
