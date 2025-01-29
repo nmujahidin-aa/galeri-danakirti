@@ -13,7 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(["namespace" => "App\Http\Controllers"], function () {
+Route::group(["namespace" => "App\Http\Controllers\User"], function () {
     Route::get("/", "HomeController@index")->name('home.index');
+    Route::group(["as"=>"company.", "prefix"=>"company"], function () {
+        Route::get("/about", "CompanyController@about")->name('about');
+        Route::get("/contact", "CompanyController@contact")->name('contact');
+        Route::get("/faq", "CompanyController@faq")->name('faq');
+    });
 
+    Route::group(["as"=>"catalog.", "prefix"=>"catalog"], function () {
+        Route::get("/news", "CatalogController@news")->name('news');
+        Route::get("/event", "CatalogController@event")->name('event');
+    });
 });

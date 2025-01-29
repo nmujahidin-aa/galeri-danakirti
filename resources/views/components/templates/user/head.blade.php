@@ -8,4 +8,6 @@
     <link rel="stylesheet preload" as="style" href="{{URL::to('/')}}/assets/css/libs.min.css" />
 
     <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/index.min.css" />
+
+    @yield('styles')
 </head>

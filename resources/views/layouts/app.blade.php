@@ -2,6 +2,7 @@
 <html lang="en">
     <x-templates.user.head />
     <body>
+    @include('sweetalert::alert')
         <x-templates.user.navbar />
         <!-- Homepage content start -->
         <main>

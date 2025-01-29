@@ -21,7 +21,7 @@
                             </a>
                         </li>
                         <li class="list-item">
-                            <a class="link" href="https://instagram.com" target="_blank" rel="noopener norefferer">
+                            <a class="link" href="https://www.instagram.com/galeri.danakirti/" target="_blank" rel="noopener norefferer">
                                 <i class="icon-instagram icon"></i>
                             </a>
                         </li>
@@ -46,8 +46,8 @@
                             <i class="icon-call"></i>
                         </span>
                         <div class="wrapper d-flex flex-column">
-                            <a class="link" href="tel:+1234567890">+1-202-555-0133</a>
-                            <a class="link" href="tel:+1234567890">+1-202-555-0133</a>
+                            <a class="link" href="tel:+1234567890">Ibu Aminah</a>
+                            <a class="link" href="tel:+1234567890">0823-3154-4775</a>
                         </div>
                     </li>
                     <li class="list-item d-flex align-items-center">
@@ -97,6 +97,12 @@
                             Katalog
                         </a>
                     </li>
+                    <li class="list-item">
+                        <a class="link d-inline-flex align-items-center" href="#">
+                            <i class="icon-caret_right accent icon"></i>
+                            Perusahaan
+                        </a>
+                    </li>
                 </ul>
             </div>
             <div class="footer_main-instagram footer_main-block col-md-6 col-xl-auto">
@@ -105,11 +111,11 @@
                     <li class="list-item">
                         <a class="link" href="#" target="_blank" rel="noopener norefferer">
                             <picture>
-                                <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                                <source data-srcset="{{URL::to('/')}}/assets/img/post/4.jpeg" srcset="{{URL::to('/')}}/assets/img/post/4.jpeg" type="image/webp" />
                                 <img
                                     class="lazy preview"
-                                    data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                    src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                    data-src="{{URL::to('/')}}/assets/img/post/4.jpeg"
+                                    src="{{URL::to('/')}}/assets/img/post/4.jpeg"
                                     alt="instagram post"
                                 />
                             </picture>
@@ -118,11 +124,11 @@
                     <li class="list-item">
                         <a class="link" href="#" target="_blank" rel="noopener norefferer">
                             <picture>
-                                <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                                <source data-srcset="{{URL::to('/')}}/assets/img/post/5.jpeg" srcset="{{URL::to('/')}}/assets/img/post/5.jpeg" type="image/webp" />
                                 <img
                                     class="lazy preview"
-                                    data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                    src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                    data-src="{{URL::to('/')}}/assets/img/post/5.jpeg"
+                                    src="{{URL::to('/')}}/assets/img/post/5.jpeg"
                                     alt="instagram post"
                                 />
                             </picture>
@@ -131,11 +137,11 @@
                     <li class="list-item">
                         <a class="link" href="#" target="_blank" rel="noopener norefferer">
                             <picture>
-                                <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                                <source data-srcset="{{URL::to('/')}}/assets/img/post/6.jpeg" srcset="{{URL::to('/')}}/assets/img/post/6.jpeg" type="image/webp" />
                                 <img
                                     class="lazy preview"
-                                    data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                    src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                    data-src="{{URL::to('/')}}/assets/img/post/6.jpeg"
+                                    src="{{URL::to('/')}}/assets/img/post/6.jpeg"
                                     alt="instagram post"
                                 />
                             </picture>
@@ -144,11 +150,11 @@
                     <li class="list-item">
                         <a class="link" href="#" target="_blank" rel="noopener norefferer">
                             <picture>
-                                <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                                <source data-srcset="{{URL::to('/')}}/assets/img/post/7.jpeg" srcset="{{URL::to('/')}}/assets/img/post/7.jpeg" type="image/webp" />
                                 <img
                                     class="lazy preview"
-                                    data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                    src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                    data-src="{{URL::to('/')}}/assets/img/post/7.jpeg"
+                                    src="{{URL::to('/')}}/assets/img/post/7.jpeg"
                                     alt="instagram post"
                                 />
                             </picture>
@@ -157,11 +163,11 @@
                     <li class="list-item">
                         <a class="link" href="#" target="_blank" rel="noopener norefferer">
                             <picture>
-                                <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                                <source data-srcset="{{URL::to('/')}}/assets/img/post/8.jpeg" srcset="{{URL::to('/')}}/assets/img/post/8.jpeg" type="image/webp" />
                                 <img
                                     class="lazy preview"
-                                    data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                    src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                    data-src="{{URL::to('/')}}/assets/img/post/8.jpeg"
+                                    src="{{URL::to('/')}}/assets/img/post/8.jpeg"
                                     alt="instagram post"
                                 />
                             </picture>
@@ -170,11 +176,11 @@
                     <li class="list-item">
                         <a class="link" href="#" target="_blank" rel="noopener norefferer">
                             <picture>
-                                <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                                <source data-srcset="{{URL::to('/')}}/assets/img/post/9.jpeg" srcset="{{URL::to('/')}}/assets/img/post/9.jpeg" type="image/webp" />
                                 <img
                                     class="lazy preview"
-                                    data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                    src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                    data-src="{{URL::to('/')}}/assets/img/post/9.jpeg"
+                                    src="{{URL::to('/')}}/assets/img/post/9.jpeg"
                                     alt="instagram post"
                                 />
                             </picture>
