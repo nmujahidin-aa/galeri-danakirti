@@ -25,4 +25,18 @@ Route::group(["namespace" => "App\Http\Controllers\User"], function () {
         Route::get("/news", "CatalogController@news")->name('news');
         Route::get("/event", "CatalogController@event")->name('event');
     });
+
+    Route::group(["as"=>"product.", "prefix"=>"product"], function () {
+        Route::get("/", "ProductController@index")->name('index');
+    });
+
+    Route::group(["as"=>"course.", "prefix"=>"course"], function () {
+        Route::group(["as"=>"pengembangan-diri.", "prefix"=>"pengembangan-diri"], function () {
+            Route::get("/", "SelfDevelopmentController@index")->name('index');
+        });
+
+        Route::group(["as"=>"pelatihan-ekonomi.", "prefix"=>"pelatihan-ekonomi"], function () {
+            Route::get("/", "EconomicTrainingController@index")->name('index');
+        });
+    });
 });

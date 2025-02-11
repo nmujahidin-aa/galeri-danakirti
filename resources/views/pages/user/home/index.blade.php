@@ -6,7 +6,7 @@
 
 @section('content')
 <!-- Hero section start -->
-<section class="hero">
+<section class="hero" style="margin-top: -100px;">
     <div class="container d-xl-flex align-items-start">
         <div class="hero_about col-xl-6">
             <div class="hero_header">
@@ -159,37 +159,17 @@
                 Setiap produk dipilih dengan cermat untuk memberikan kenyamanan, kepraktisan, dan daya tahan yang luar biasa.
             </p>
         </div>
+        @if (count($product) != 0)
         <div class="shop_products d-flex flex-column" style="width: 100%;">
             <ul class="shop_products-list d-sm-flex flex-wrap">
+                @foreach ($product as $index => $row)
                 <li class="shop_products-list_item col-sm-6 col-md-4 col-lg-6 col-xl-4" data-order="3">
                     <div class="wrapper d-flex flex-column">
                         <div class="media">
                             <span class="sale d-flex align-items-center justify-content-center">-10%</span>
                             <div class="overlay d-flex flex-column align-items-center justify-content-center">
                                 <ul class="action d-flex align-items-center justify-content-center">
-                                    <li class="list-item">
-                                        <a
-                                            class="action_link d-flex align-items-center justify-content-center"
-                                            href="#"
-                                            data-trigger="compare"
-                                        >
-                                            <i class="icon-compare"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a class="action_link d-flex align-items-center justify-content-center" href="#">
-                                            <i class="icon-basket"></i>
-                                        </a>
-                                    </li>
-                                    <li class="list-item">
-                                        <a
-                                            class="action_link d-flex align-items-center justify-content-center"
-                                            href="#"
-                                            data-role="wishlist"
-                                        >
-                                            <i class="icon-heart"></i>
-                                        </a>
-                                    </li>
+
                                     <li class="list-item">
                                         <a
                                             class="action_link d-flex align-items-center justify-content-center"
@@ -202,21 +182,28 @@
                                 </ul>
                             </div>
                             <picture>
-                                <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
-                                <img class="lazy" data-src="{{URL::to('/')}}/assets/img/placeholder.jpg" src="{{URL::to('/')}}/assets/img/placeholder.jpg" alt="media" />
+                                <source data-srcset="{{ asset('storage/' . $row->image) }}" srcset="{{ asset('storage/' . $row->image) }}" type="image/webp" />
+                                <img class="lazy" data-src="{{ asset('storage/' . $row->image) }}" src="{{ asset('storage/' . $row->image) }}" alt="media" />
                             </picture>
                         </div>
                         <div class="main d-flex flex-column">
-                            <a class="main_title" href="product.html" target="_blank" rel="noopener norefferer">Lemon Skunk</a>
+                            <a class="main_title" href="product.html" target="_blank" rel="noopener norefferer">{{$row->name}}</a>
                             <div class="main_price">
-                                <span class="price price--old">$10.97</span>
-                                <span class="price price--new">$6.97</span>
+                                {{-- <span class="price price--old">$10.97</span>
+                                <span class="price price--new">$6.97</span> --}}
                             </div>
                         </div>
                     </div>
                 </li>
+                @endforeach
             </ul>
         </div>
+        @else
+            <div class="d-flex justify-content-center">
+                <span class="text-danger">-- Belum ada produk unggulan --</span>
+            </div>
+        @endif
+
         <div class="d-flex justify-content-center">
             <a class="featured_btn btn" href="#">Lihat Semua Produk</a>
         </div>
@@ -224,49 +211,46 @@
 </section>
 <!-- Featured products section end -->
 <!-- About section start -->
-<section class="about section--nopb">
+<section class="about section--nopb pb-5">
     <div class="container">
         <div class="about_main d-lg-flex justify-content-between">
             <div class="about_main-content col-lg-6 col-xl-auto">
                 <h2 class="about_main-content_header">
-                    Our knowledgeable team can help you design experiences tailored to your needs by accessing one of the flower
-                    selections
+                    Mengenal lebih jauh tentang Danakirti
                 </h2>
                 <p class="about_main-content_text">
-                    Elementum eu facilisis sed odio morbi quis commodo odio. Mauris rhoncus aenean vel elit scelerisque mauris
-                    pellentesque. Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim
-                    ut sem. Turpis egestas maecenas pharetra convallis posuere
+                    Danakirti adalah komunitas di bawah naungan Gerdu Sawah yang bertujuan untuk mewadahi dan mendukung pertumbuhan UMKM di Desa Wonorejo. Selain itu, komunitas ini juga aktif di bidang sosial, khususnya dalam memberdayakan mantan ODGJ agar dapat kembali mandiri dan berdaya di tengah masyarakat.
                 </p>
             </div>
             <div class="about_main-media">
                 <picture>
-                    <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
-                    <img class="lazy" data-src="{{URL::to('/')}}/assets/img/placeholder.jpg" src="{{URL::to('/')}}/assets/img/placeholder.jpg" alt="media" />
+                    <source data-srcset="{{URL::to('/')}}/assets/img/about.png" srcset="{{URL::to('/')}}/assets/img/about.png" type="image/webp" />
+                    <img class="lazy" data-src="{{URL::to('/')}}/assets/img/about.png" src="{{URL::to('/')}}/assets/img/about.png" alt="media" />
                 </picture>
             </div>
         </div>
         <ul class="about_numbers d-flex flex-wrap">
             <li class="about_numbers-group col-sm-6 col-lg-3" data-order="1">
                 <div class="wrapper d-flex flex-column align-items-center align-items-sm-start">
-                    <span class="countNum number d-flex align-items-center secondary" data-suffix="+" data-value="180">0</span>
+                    <span class="countNum number d-flex align-items-center secondary" data-suffix="+" data-value="20">0</span>
                     <p class="number-label">Temukan berbagai produk terbaru yang inovatif dan bermanfaat untuk Anda.</p>
                 </div>
             </li>
             <li class="about_numbers-group col-sm-6 col-lg-3" data-order="2">
                 <div class="wrapper d-flex flex-column align-items-center align-items-sm-start">
-                    <span class="countNum number d-flex align-items-center secondary" data-suffix="X" data-value="3">0</span>
+                    <span class="countNum number d-flex align-items-center secondary" data-suffix="+" data-value="10">0</span>
                     <p class="number-label">Dikelola oleh tim profesional yang berpengalaman dan berdedikasi.</p>
                 </div>
             </li>
             <li class="about_numbers-group col-sm-6 col-lg-3" data-order="3">
                 <div class="wrapper d-flex flex-column align-items-center align-items-sm-start">
-                    <span class="countNum number d-flex align-items-center secondary" data-suffix="%" data-value="100">0</span>
+                    <span class="countNum number d-flex align-items-center secondary" data-suffix="" data-value="12">0</span>
                     <p class="number-label">Pelatihan terbaik untuk meningkatkan kemampuan dan keterampilan Anda.</p>
                 </div>
             </li>
             <li class="about_numbers-group col-sm-6 col-lg-3" data-order="4">
                 <div class="wrapper d-flex flex-column align-items-center align-items-sm-start">
-                    <span class="countNum number d-flex align-items-center secondary" data-suffix="K" data-value="11">0</span>
+                    <span class="countNum number d-flex align-items-center secondary" data-suffix="+" data-value="100">0</span>
                     <p class="number-label">Berbagai kegiatan menarik yang bermanfaat sepanjang tahun ini.</p>
                 </div>
             </li>
@@ -275,7 +259,7 @@
 </section>
 <!-- About section end -->
 <!-- Product section start -->
-<div class="product section">
+{{-- <div class="product section">
     <div class="container d-flex flex-column flex-lg-row">
         <div class="product_media">
             <picture>
@@ -340,7 +324,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- Product section end -->
 <!-- Promo info section start -->
 <section class="info section">
@@ -383,15 +367,14 @@
                 <img src="{{URL::to('/')}}/assets/img/logos/logo_danakirti.png" alt="logo" style="width: 100px;">
             </span>
             <h2 class="info_content-header">
-                Our doctors recommend the best THC to CBD ratio to look for in a marijuana strain and suggest the recommended
-                dosage and route of administration
+                Bersama Kita Berkarya, Memberdayakan UMKM, dan Mengembalikan Harapan bagi Mereka yang Bangkit. Karena Kemandirian adalah Hak Setiap Insan
             </h2>
         </div>
     </div>
 </section>
 <!-- Promo info section end  -->
 <!-- Effects section start  -->
-<section class="effects section--nopb">
+{{-- <section class="effects section--nopb">
     <span class="effects_underlay">
         <span class="effects_underlay-circle effects_underlay-circle--accent"></span>
         <span class="effects_underlay-circle effects_underlay-circle--green"></span>
@@ -536,7 +519,7 @@
             </li>
         </ul>
     </div>
-</section>
+</section> --}}
 <!-- Effects section end  -->
 <!-- Latest news section start -->
 <section class="latest section">
@@ -545,13 +528,13 @@
         <div class="latest_wrapper d-flex flex-column-reverse flex-lg-row">
             <div class="latest_promo" data-aos="fade-right">
                 <picture>
-                    <source srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
-                    <img class="lazy latest_promo-bg" data-src="{{URL::to('/')}}/assets/img/placeholder.jpg" src="{{URL::to('/')}}/assets/img/placeholder.jpg" alt="promo" />
+                    <source srcset="{{URL::to('/')}}/assets/img/event/1.jpg" type="image/webp" />
+                    <img class="lazy latest_promo-bg" data-src="{{URL::to('/')}}/assets/img/event/1.jpg" src="{{URL::to('/')}}/assets/img/event/1.jpg" alt="promo" />
                 </picture>
                 <div class="overlay d-flex d-sm-block flex-column justify-content-center">
-                    <h4 class="overlay_header">Buy Marijuana Seeds Online and Get a Gift</h4>
+                    <h4 class="overlay_header">Pelatihan Pengembangan Diri</h4>
                     <p class="overlay_text">
-                        Feugiat in fermentum posuere urna nec tincidunt praesent semper feugiat pulvinar proin
+                        Pelatihan pengembangan karakter positif pada eks-ODGJ Komunitas Danakirti
                     </p>
                 </div>
             </div>
@@ -559,11 +542,11 @@
                 <li class="list-item d-flex flex-column flex-sm-row" data-aos="fade-up">
                     <span class="latest_list-preview">
                         <picture>
-                            <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                            <source data-srcset="{{URL::to('/')}}/assets/img/event/2.jpg" srcset="{{URL::to('/')}}/assets/img/event/2.jpg" type="image/webp" />
                             <img
                                 class="lazy preview-img"
-                                data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                data-src="{{URL::to('/')}}/assets/img/event/2.jpg"
+                                src="{{URL::to('/')}}/assets/img/event/2.jpg"
                                 alt="Top 15 Best Strain Of Weed For Anxiety"
                             />
                         </picture>
@@ -572,29 +555,28 @@
                         <span class="metadata">
                             <span class="metadata_item d-inline-flex align-items-center">
                                 <i class="icon-calendar_day icon secondary"></i>
-                                September 30, 2021
+                                Desember 28, 2024
                             </span>
                             <span class="metadata_item d-inline-flex align-items-center">
                                 <i class="icon-comments icon secondary"></i>
                                 <span class="number d-md-none">0</span>
-                                <span class="text d-none d-md-inline">No Comments</span>
+                                <span class="text d-none d-md-inline">Belum ada komentar</span>
                             </span>
                         </span>
-                        <a class="title" href="post.html">Top 15 Best Strain Of Weed For Anxiety</a>
+                        <a class="title" href="">Pelatihan Konseling</a>
                         <p class="text">
-                            Felis eget velit aliquet sagittis id consectetur. Eleifend donec pretium vulputate sapien nec
-                            sagittis
+                            Pelatihan Berbasis Konseling Kelompok sebagai Upaya membangun Semangat Kebersamaan
                         </p>
                     </div>
                 </li>
                 <li class="list-item d-flex flex-column flex-sm-row" data-aos="fade-up">
                     <span class="latest_list-preview">
                         <picture>
-                            <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                            <source data-srcset="{{URL::to('/')}}/assets/img/event/3.jpg" srcset="{{URL::to('/')}}/assets/img/event/3.jpg" type="image/webp" />
                             <img
                                 class="lazy preview-img"
-                                data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                data-src="{{URL::to('/')}}/assets/img/event/3.jpg"
+                                src="{{URL::to('/')}}/assets/img/event/3.jpg"
                                 alt="Raw Cannabis Seeds Promote Health"
                             />
                         </picture>
@@ -603,29 +585,28 @@
                         <span class="metadata">
                             <span class="metadata_item d-inline-flex align-items-center">
                                 <i class="icon-calendar_day icon secondary"></i>
-                                September 30, 2021
+                                Desember 26, 2024
                             </span>
                             <span class="metadata_item d-inline-flex align-items-center">
                                 <i class="icon-comments icon secondary"></i>
                                 <span class="number d-md-none">0</span>
-                                <span class="text d-none d-md-inline">No Comments</span>
+                                <span class="text d-none d-md-inline">Belum ada komentar</span>
                             </span>
                         </span>
-                        <a class="title" href="post.html">Raw Cannabis Seeds Promote Health</a>
+                        <a class="title" href="post.html">Pelatihan Wawasan</a>
                         <p class="text">
-                            Felis eget velit aliquet sagittis id consectetur. Eleifend donec pretium vulputate sapien nec
-                            sagittis
+                            Pelatihan Meningkatkan Ilmu dan Wawasan Pada Eks-ODGJ Komunitas Danakirti
                         </p>
                     </div>
                 </li>
                 <li class="list-item d-flex flex-column flex-sm-row" data-aos="fade-up">
                     <span class="latest_list-preview">
                         <picture>
-                            <source data-srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" srcset="{{URL::to('/')}}/assets/img/placeholder.jpg" type="image/webp" />
+                            <source data-srcset="{{URL::to('/')}}/assets/img/event/4.jpg" srcset="{{URL::to('/')}}/assets/img/event/4.jpg" type="image/webp" />
                             <img
                                 class="lazy preview-img"
-                                data-src="{{URL::to('/')}}/assets/img/placeholder.jpg"
-                                src="{{URL::to('/')}}/assets/img/placeholder.jpg"
+                                data-src="{{URL::to('/')}}/assets/img/event/4.jpg"
+                                src="{{URL::to('/')}}/assets/img/event/4.jpg"
                                 alt="How Many Autoflowers In a Tent?"
                             />
                         </picture>
@@ -634,18 +615,17 @@
                         <span class="metadata">
                             <span class="metadata_item d-inline-flex align-items-center">
                                 <i class="icon-calendar_day icon secondary"></i>
-                                September 30, 2021
+                                Desember 24, 2025
                             </span>
                             <span class="metadata_item d-inline-flex align-items-center">
                                 <i class="icon-comments icon secondary"></i>
                                 <span class="number d-md-none">0</span>
-                                <span class="text d-none d-md-inline">No Comments</span>
+                                <span class="text d-none d-md-inline">Belum ada komentar</span>
                             </span>
                         </span>
-                        <a class="title" href="post.html">How Many Autoflowers In a Tent?</a>
+                        <a class="title" href="">Pelatihan Packaging</a>
                         <p class="text">
-                            Felis eget velit aliquet sagittis id consectetur. Eleifend donec pretium vulputate sapien nec
-                            sagittis
+                            Pelathan untuk mengubah kemasan produk guna meningkatkan daya tarik visual dan fungsionalitas
                         </p>
                     </div>
                 </li>

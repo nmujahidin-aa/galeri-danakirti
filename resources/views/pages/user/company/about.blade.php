@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title', 'News')
+@section('title', 'Tentang Kami')
 @section('styles')
     <link rel="stylesheet" href="{{URL::to('/')}}/assets/css/about.min.css" />
 @endsection
@@ -7,7 +7,7 @@
 @section('content')
 <x-templates.user.pages-header
     title="Tentang Kami"
-    description="Nibh tellus molestie nunc non blandit. Mi tempus imperdiet nulla malesuada pellentesque elit"
+    description="Kenali kami lebih dekat"
     {{-- breadcrumb_name="Katalog"
     current="Berita" --}}
 />
@@ -19,13 +19,10 @@
             <div class="about_main d-lg-flex justify-content-between">
                 <div class="about_main-content col-lg-6 col-xl-auto">
                     <h2 class="about_main-content_header">
-                        Our knowledgeable team can help you design experiences tailored to your needs by accessing one of the flower
-                        selections
+                        Lebih dekat dengan Komunitas Danakirti
                     </h2>
                     <p class="about_main-content_text">
-                        Elementum eu facilisis sed odio morbi quis commodo odio. Mauris rhoncus aenean vel elit scelerisque mauris
-                        pellentesque. Accumsan sit amet nulla facilisi morbi tempus. Suscipit tellus mauris a diam maecenas sed enim
-                        ut sem. Turpis egestas maecenas pharetra convallis posuere
+                        Danakirti adalah komunitas di bawah naungan Gerdu Sawah yang bertujuan untuk mewadahi dan mendukung pertumbuhan UMKM di Desa Wonorejo. Selain itu, komunitas ini juga aktif di bidang sosial, khususnya dalam memberdayakan mantan ODGJ agar dapat kembali mandiri dan berdaya di tengah masyarakat.
                     </p>
                 </div>
                 <div class="about_main-media">

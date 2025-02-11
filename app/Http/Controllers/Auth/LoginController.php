@@ -28,44 +28,36 @@ class LoginController extends Controller
     public function post(LoginRequest $request)
     {
         try {
+
             $email = trim(htmlentities($request->input("email")));
             $password = trim(htmlentities($request->input("password")));
-            $rememberme = $request->input('rememberme', false);
+
 
             $credentials = [
                 'email' => $email,
                 'password' => $password,
             ];
 
-            if (Auth::attempt($credentials, $rememberme)) {
-                // Ensure the role check is correct
-                if (!Auth::user()->hasRole([RoleEnum::ADMINISTRATOR, RoleEnum::USER])) {
+            if (Auth::attempt($credentials)) {
+                $user = Auth::user();
+
+                // Cek apakah user memiliki salah satu role yang diizinkan
+                if (!$user->hasRole([
+                    RoleEnum::ADMINISTRATOR
+                ])) {
                     Auth::logout();
-                    throw new \Exception("Anda tidak diperbolehkan mengakses menu ini");
+                    throw new Error("Anda tidak diperbolehkan mengakses menu ini");
                 }
 
-                // Determine the redirect URL based on the user's role
-                $redirectUrl = Auth::user()->hasRole(RoleEnum::ADMINISTRATOR)
-                    ? route('dashboard.dashboard.index')
-                    : route('home.index');
-
                 alert()->html('Berhasil', 'Login berhasil', 'success');
-
-                // Return a JSON response with the redirect URL
-                return response()->json([
-                    'status' => 'success',
-                    'redirect_url' => $redirectUrl
-                ]);
-            } else {
-                throw new \Exception("Email / password tidak sesuai");
+                return redirect()->intended(route('dashboard.dashboard.index'));
             }
+
         } catch (\Throwable $e) {
             Log::emergency($e->getMessage());
-            alert()->html('Gagal', $e->getMessage(), 'error');
-            return response()->json([
-                'status' => 'error',
-                'message' => $e->getMessage()
-            ], 400);
+
+            alert()->html('Gagal',$e->getMessage(),'error');
+            return redirect()->back()->withInput();
         }
     }
 

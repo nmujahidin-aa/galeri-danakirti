@@ -10,20 +10,15 @@
         </a>
         <nav class="header_nav">
             <ul class="header_nav-list">
-                <li class="header_nav-list_item dropdown">
+                <li class="header_nav-list_item">
                     <a
-                        class="nav-link dropdown-toggle d-inline-flex align-items-center"
-                        href="{{route('home.index')}}"
-                        data-bs-toggle="collapse"
-                        data-bs-target="{{route('home.index')}}"
-                        aria-expanded="false"
-                        aria-controls="homeMenu"
+                        class="nav-link d-inline-flex align-items-center"
+                        href="{{ route('home.index') }}"
                     >
                         Beranda
                     </a>
-                    <div class="dropdown-menu collapse" id="homeMenu">
-                    </div>
                 </li>
+
                 <li class="header_nav-list_item dropdown">
                     <a
                         class="nav-link dropdown-toggle d-inline-flex align-items-center"
@@ -39,42 +34,21 @@
                     <div class="dropdown-menu collapse" id="shopMenu">
                         <ul class="dropdown-list">
                             <li class="list-item nav-item" data-page="shop">
-                                <a class="dropdown-item" href="">Pengembangan Diri</a>
+                                <a class="dropdown-item" href="{{route('course.pengembangan-diri.index')}}">Pengembangan Diri</a>
                             </li>
                             <li class="list-item nav-item" data-page="shop2">
-                                <a class="dropdown-item" href="">Pelatihan Ekonomi</a>
+                                <a class="dropdown-item" href="{{route('course.pelatihan-ekonomi.index')}}">Pelatihan Ekonomi</a>
                             </li>
                         </ul>
                     </div>
                 </li>
-                <li class="header_nav-list_item dropdown">
+                <li class="header_nav-list_item">
                     <a
-                        class="nav-link dropdown-toggle d-inline-flex align-items-center"
-                        href="#"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#newsMenu"
-                        aria-expanded="false"
-                        aria-controls="newsMenu"
+                        class="nav-link d-inline-flex align-items-center"
+                        href="{{ route('product.index') }}"
                     >
                         Produk
-                        <i class="icon-caret_down icon"></i>
                     </a>
-                    <div class="dropdown-menu collapse" id="newsMenu">
-                        <ul class="dropdown-list">
-                            <li class="list-item nav-item" data-page="news">
-                                <a class="dropdown-item" href="news.html">Keset</a>
-                            </li>
-                            <li class="list-item nav-item" data-page="news2">
-                                <a class="dropdown-item" href="news2.html">News 02</a>
-                            </li>
-                            <li class="list-item nav-item" data-page="post">
-                                <a class="dropdown-item" href="post.html">Single Post 01</a>
-                            </li>
-                            <li class="list-item nav-item" data-page="post2">
-                                <a class="dropdown-item" href="post2.html">Single Post 02</a>
-                            </li>
-                        </ul>
-                    </div>
                 </li>
                 <li class="header_nav-list_item dropdown">
                     <a

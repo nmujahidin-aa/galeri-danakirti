@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class HomeController extends Controller
 {
@@ -15,6 +16,9 @@ class HomeController extends Controller
     }
     public function index()
     {
-        return view($this->view . "index");
+        $product = Product::all();
+        return view($this->view . "index",[
+            'product' => $product,
+        ]);
     }
 }
