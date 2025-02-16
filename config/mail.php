@@ -12,7 +12,6 @@ return [
     | and used as needed; however, this mailer will be used by default.
     |
     */
-
     'default' => env('MAIL_MAILER', 'smtp'),
 
     /*
@@ -28,51 +27,42 @@ return [
     | sending an e-mail. You will specify which one you are using for your
     | mailers below. You are free to add additional mailers as required.
     |
-    | Supported: "smtp", "sendmail", "mailgun", "ses", "ses-v2",
-    |            "postmark", "log", "array", "failover", "roundrobin"
+    | Supported: "smtp", "sendmail", "mailgun", "ses",
+    |            "postmark", "log", "array", "failover"
     |
     */
-
     'mailers' => [
         'smtp' => [
-            'transport' => 'smtp',
-            'url' => env('MAIL_URL'),
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
-            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
-            'timeout' => null,
-            'local_domain' => env('MAIL_EHLO_DOMAIN'),
+            'transport'   => 'smtp',
+            'host'        => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port'        => env('MAIL_PORT', 587),
+            'encryption'  => env('MAIL_ENCRYPTION', 'tls'),
+            'username'    => env('MAIL_USERNAME'),
+            'password'    => env('MAIL_PASSWORD'),
+            'timeout'     => null,
+            'verify_peer' => false,
         ],
 
         'ses' => [
             'transport' => 'ses',
         ],
 
-        'postmark' => [
-            'transport' => 'postmark',
-            // 'message_stream_id' => null,
-            // 'client' => [
-            //     'timeout' => 5,
-            // ],
-        ],
-
         'mailgun' => [
             'transport' => 'mailgun',
-            // 'client' => [
-            //     'timeout' => 5,
-            // ],
+        ],
+
+        'postmark' => [
+            'transport' => 'postmark',
         ],
 
         'sendmail' => [
             'transport' => 'sendmail',
-            'path' => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
+            'path'      => env('MAIL_SENDMAIL_PATH', '/usr/sbin/sendmail -bs -i'),
         ],
 
         'log' => [
             'transport' => 'log',
-            'channel' => env('MAIL_LOG_CHANNEL'),
+            'channel'   => env('MAIL_LOG_CHANNEL'),
         ],
 
         'array' => [
@@ -81,17 +71,9 @@ return [
 
         'failover' => [
             'transport' => 'failover',
-            'mailers' => [
+            'mailers'   => [
                 'smtp',
                 'log',
-            ],
-        ],
-
-        'roundrobin' => [
-            'transport' => 'roundrobin',
-            'mailers' => [
-                'ses',
-                'postmark',
             ],
         ],
     ],
@@ -106,10 +88,37 @@ return [
     | used globally for all e-mails that are sent by your application.
     |
     */
-
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS'),
+        'name'    => env('MAIL_FROM_NAME'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global "Admin" Address
+    |--------------------------------------------------------------------------
+    |
+    | General admin related admins, such as order notifications.
+    |
+    */
+    'admin' => [
+        'address' => env('ADMIN_MAIL_ADDRESS'),
+        'name'    => env('ADMIN_MAIL_NAME', 'Admin'),
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Global "Contact" Address
+    |--------------------------------------------------------------------------
+    |
+    | General contact address used in the footer of the email templates.
+    | Here, you may specify a name and address that is
+    | used globally for all e-mails that are sent by your application.
+    |
+    */
+    'contact' => [
+        'address' => env('CONTACT_MAIL_ADDRESS'),
+        'name'    => env('CONTACT_MAIL_NAME', 'Contact'),
     ],
 
     /*
@@ -122,7 +131,6 @@ return [
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
     */
-
     'markdown' => [
         'theme' => 'default',
 
